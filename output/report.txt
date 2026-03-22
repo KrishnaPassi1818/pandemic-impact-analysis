@@ -1,15 +1,40 @@
 Pandemic Impact Analysis Report
-========================================
+==================================================
 
-Most affected country (total cases): United States
-Highest cases per million: Brunei
-Highest death rate: Yemen
+Objective:
+To analyze the impact of COVID-19 across countries using population-normalized metrics.
+
+Top 5 Countries by Total Cases:
+- United States: 103436829 cases
+- China: 99373219 cases
+- France: 38997490 cases
+- Germany: 38437756 cases
+- Brazil: 37511921 cases
+
+Top 5 Countries by Cases per Million:
+- Brunei: 774435.3 per million
+- San Marino: 751396.32 per million
+- Austria: 680392.01 per million
+- South Korea: 667207.04 per million
+- Faroe Islands: 652815.97 per million
+
+Top 5 Countries by Death Rate:
+- Yemen: 18.07%
+- Sudan: 7.89%
+- Syria: 5.51%
+- Somalia: 4.98%
+- Peru: 4.88%
 
 Key Insights:
-- Countries with large populations show high total cases.
-- Smaller countries dominate per capita metrics.
-- Death rates vary significantly across countries.
-- Per capita analysis provides better comparison than total values.
+- Countries with large populations tend to report higher total cases.
+- Smaller countries often show higher per capita infection rates.
+- Death rate varies significantly, indicating differences in healthcare systems.
+- Per capita metrics provide a more accurate comparison than total values.
+
+Analysis Interpretation:
+The analysis shows that raw case counts can be misleading when comparing countries.
+Population-normalized metrics reveal the actual severity of the pandemic.
+Some smaller nations experienced disproportionately high infection rates.
 
 Conclusion:
-Population size plays a crucial role in pandemic spread, but per capita metrics reveal the true severity.
+Population size strongly influences total case counts, but per capita analysis provides a clearer understanding of pandemic impact.

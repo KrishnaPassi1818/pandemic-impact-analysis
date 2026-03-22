@@ -1,26 +1,47 @@
-def generate_report(data):
-    with open("output/report.txt", "w") as f:
+class ReportGenerator:
+    def generate(self, data):
+        with open("output/report.txt", "w") as f:
 
-        f.write("Pandemic Impact Analysis Report\n")
-        f.write("=" * 40 + "\n\n")
+            f.write("Pandemic Impact Analysis Report\n")
+            f.write("=" * 50 + "\n\n")
 
-        # top country by total cases
-        top_cases = data.sort_values(by='total_cases', ascending=False).iloc[0]
-        f.write(f"Most affected country (total cases): {top_cases['location']}\n")
+            # Objective
+            f.write("Objective:\n")
+            f.write("To analyze the impact of COVID-19 across countries using population-normalized metrics.\n\n")
 
-        # top country by cases per million
-        top_per_million = data.sort_values(by='cases_per_million', ascending=False).iloc[0]
-        f.write(f"Highest cases per million: {top_per_million['location']}\n")
+            # Top Countries
+            top_cases = data.sort_values(by='total_cases', ascending=False).head(5)
+            top_per_million = data.sort_values(by='cases_per_million', ascending=False).head(5)
+            top_death = data.sort_values(by='death_rate', ascending=False).head(5)
 
-        # highest death rate
-        top_death = data.sort_values(by='death_rate', ascending=False).iloc[0]
-        f.write(f"Highest death rate: {top_death['location']}\n")
+            f.write("Top 5 Countries by Total Cases:\n")
+            for _, row in top_cases.iterrows():
+                f.write(f"- {row['location']}: {int(row['total_cases'])} cases\n")
+            f.write("\n")
 
-        f.write("\nKey Insights:\n")
-        f.write("- Countries with large populations show high total cases.\n")
-        f.write("- Smaller countries dominate per capita metrics.\n")
-        f.write("- Death rates vary significantly across countries.\n")
-        f.write("- Per capita analysis provides better comparison than total values.\n")
+            f.write("Top 5 Countries by Cases per Million:\n")
+            for _, row in top_per_million.iterrows():
+                f.write(f"- {row['location']}: {round(row['cases_per_million'], 2)} per million\n")
+            f.write("\n")
 
-        f.write("\nConclusion:\n")
-        f.write("Population size plays a crucial role in pandemic spread, but per capita metrics reveal the true severity.\n")
+            f.write("Top 5 Countries by Death Rate:\n")
+            for _, row in top_death.iterrows():
+                f.write(f"- {row['location']}: {round(row['death_rate'], 2)}%\n")
+            f.write("\n")
+
+            # Insights
+            f.write("Key Insights:\n")
+            f.write("- Countries with large populations tend to report higher total cases.\n")
+            f.write("- Smaller countries often show higher per capita infection rates.\n")
+            f.write("- Death rate varies significantly, indicating differences in healthcare systems.\n")
+            f.write("- Per capita metrics provide a more accurate comparison than total values.\n\n")
+
+            # Interpretation
+            f.write("Analysis Interpretation:\n")
+            f.write("The analysis shows that raw case counts can be misleading when comparing countries.\n")
+            f.write("Population-normalized metrics reveal the actual severity of the pandemic.\n")
+            f.write("Some smaller nations experienced disproportionately high infection rates.\n\n")
+
+            # Conclusion
+            f.write("Conclusion:\n")
+            f.write("Population size strongly influences total case counts, but per capita analysis provides a clearer understanding of pandemic impact.\n")

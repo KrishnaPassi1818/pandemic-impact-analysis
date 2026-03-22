@@ -1,7 +1,11 @@
 import pandas as pd
 
-def load_data():
-    covid = pd.read_csv("data/covid-data.csv")
-    population = pd.read_csv("data/world_population.csv")
+class DataLoader:
+    def __init__(self, covid_path, population_path):
+        self.covid_path = covid_path
+        self.population_path = population_path
 
-    return covid, population
+    def load_data(self):
+        covid = pd.read_csv(self.covid_path)
+        population = pd.read_csv(self.population_path)
+        return covid, population

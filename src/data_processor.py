@@ -21,6 +21,8 @@ def process_data(covid, population):
     merged['cases_per_million'] = (merged['total_cases'] / merged['population']) * 1_000_000
     merged['deaths_per_million'] = (merged['total_deaths'] / merged['population']) * 1_000_000
 
+    merged = merged.dropna(subset=["total_cases", "total_deaths"])
+
     return merged
 
 

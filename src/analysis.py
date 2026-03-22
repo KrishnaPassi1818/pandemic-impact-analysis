@@ -1,5 +1,3 @@
-from src.data_processor import process_data as pr_dt
-
 import pandas as pd
 
 def top_cases(merged):

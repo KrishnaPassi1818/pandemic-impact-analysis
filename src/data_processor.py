@@ -24,11 +24,3 @@ def process_data(covid, population):
     merged = merged.dropna(subset=["total_cases", "total_deaths"])
 
     return merged
-
-
-
-
-
-
-
-

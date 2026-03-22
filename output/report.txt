@@ -1,0 +1,15 @@
+Pandemic Impact Analysis Report
+========================================
+
+Most affected country (total cases): United States
+Highest cases per million: Brunei
+Highest death rate: Yemen
+
+Key Insights:
+- Countries with large populations show high total cases.
+- Smaller countries dominate per capita metrics.
+- Death rates vary significantly across countries.
+- Per capita analysis provides better comparison than total values.
+
+Conclusion:
+Population size plays a crucial role in pandemic spread, but per capita metrics reveal the true severity.

@@ -1,12 +1,13 @@
 # 🌍 Pandemic Impact Analysis
 
-A data-driven project that analyzes the global impact of COVID-19 by combining pandemic data with population statistics to generate meaningful insights, visualizations, and automated reports.
+A comprehensive data analysis project that evaluates the global impact of COVID-19 by integrating pandemic data with population statistics.
+The system provides insights, visualizations, automated reports, and a rule-based risk prediction model using a structured Object-Oriented design.
 
 ---
 
 ## 📌 Objective
 
-The objective of this project is to evaluate the severity of COVID-19 across countries using both **absolute metrics** (total cases, deaths) and **normalized metrics** (cases per million, deaths per million).
+To analyze COVID-19 impact across countries using both absolute and population-normalized metrics, and to derive meaningful insights along with risk-based classification.
 
 ---
 
@@ -19,6 +20,8 @@ The objective of this project is to evaluate the severity of COVID-19 across cou
 * 📈 Visualization using bar charts
 * 📝 Automated report generation with insights
 * 🧠 Object-Oriented Programming (OOP) design
+* 💻 Interactive CLI (Command Line Interface)
+* 🔮 Risk Prediction Module (rule-based classification)
 * 🔄 Version control using Git & GitHub
 
 ---
@@ -28,22 +31,23 @@ The objective of this project is to evaluate the severity of COVID-19 across cou
 ```
 pandemic-impact-analysis/
 │
-├── data/                  # Raw datasets
+├── data/
 │   ├── covid-data.csv
 │   └── world_population.csv
 │
 ├── output/
-│   ├── graphs/            # Generated graphs
-│   └── report.txt         # Final analysis report
+│   ├── graphs/
+│   └── report.txt
 │
 ├── src/
 │   ├── data_loader.py
 │   ├── data_processor.py
 │   ├── analysis.py
 │   ├── visualization.py
-│   └── report_generator.py
+│   ├── report_generator.py
+│   └── predictor.py
 │
-├── main.py                # Main execution file
+├── main.py
 └── README.md
 ```
 
@@ -59,7 +63,7 @@ pandemic-impact-analysis/
 
 ---
 
-## 📊 Key Analysis Performed
+## 🧠 Key Analysis Performed
 
 * Top countries by total COVID cases
 * Top countries by cases per million
@@ -68,15 +72,54 @@ pandemic-impact-analysis/
 
 ---
 
-## 📈 Sample Outputs
+## 🔮 Prediction Module
 
-* Bar charts for:
+A rule-based prediction system is implemented to classify countries into:
 
-  * Total cases
-  * Cases per million
-  * Death rate
+* **High Risk**
+* **Medium Risk**
+* **Low Risk**
 
-* Generated report including:
+### 📊 Criteria Used:
+
+* Cases per million
+* Death rate (%)
+
+### 🧠 Logic:
+
+* High risk → High cases per million OR high death rate
+* Medium risk → Moderate cases
+* Low risk → Lower infection impact
+
+This demonstrates basic data-driven decision making and serves as an introduction to predictive modeling.
+
+---
+
+## 💻 CLI Interface
+
+The project includes an interactive menu:
+
+```
+1. Top Countries by Total Cases
+2. Top Countries by Cases per Million
+3. Top Countries by Death Rate
+4. Generate Graphs
+5. Generate Report
+6. Exit
+7. Predict Risk Levels
+```
+
+---
+
+## 📈 Outputs
+
+* 📊 Graphs:
+
+  * Total Cases
+  * Cases per Million
+  * Death Rate
+
+* 📄 Report:
 
   * Key findings
   * Insights
@@ -88,47 +131,47 @@ pandemic-impact-analysis/
 
 1. Clone the repository:
 
-```bash
+```
 git clone <your-repo-url>
 cd pandemic-impact-analysis
 ```
 
 2. Install dependencies:
 
-```bash
+```
 pip install pandas matplotlib numpy
 ```
 
 3. Run the project:
 
-```bash
+```
 python main.py
 ```
 
 ---
 
-## 📄 Output
+## 📁 Output Location
 
-* 📁 Graphs saved in: `output/graphs/`
-* 📄 Report generated at: `output/report.txt`
+* Graphs → `output/graphs/`
+* Report → `output/report.txt`
 
 ---
 
 ## 🧠 Key Insights
 
-* Countries with larger populations show higher total cases
-* Smaller countries often have higher per capita impact
+* Larger populations often show higher total cases
+* Smaller countries may show higher per capita impact
 * Death rates vary significantly across regions
-* Per capita metrics provide better comparison than raw totals
+* Per capita analysis provides better comparison than raw totals
 
 ---
 
 ## 🔮 Future Improvements
 
-* Add interactive dashboard (Streamlit / Flask)
-* Include correlation heatmaps
-* Implement basic prediction models
+* Add machine learning-based prediction
+* Build web dashboard (Streamlit / Flask)
 * Export report as PDF
+* Add real-time data updates
 
 ---
 

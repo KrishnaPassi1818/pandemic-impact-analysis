@@ -5,6 +5,7 @@ from src.data_processor import DataProcessor
 from src.analysis import Analyzer
 from src.visualization import Visualizer
 from src.report_generator import ReportGenerator
+from src.predictor import Predictor
 
 
 def clear():
@@ -25,8 +26,9 @@ def setup():
     analyzer = Analyzer()
     visualizer = Visualizer()
     report = ReportGenerator()
+    predictor = Predictor()
 
-    return merged, analyzer, visualizer, report
+    return merged, analyzer, visualizer, report, predictor
 
 
 def menu():
@@ -37,11 +39,12 @@ def menu():
     print("3. Top Countries by Death Rate")
     print("4. Generate Graphs")
     print("5. Generate Report")
-    print("6. Exit")
+    print("6. Predict Risk Levels")
+    print("7. Exit")
 
 
 def main():
-    merged, analyzer, visualizer, report = setup()
+    merged, analyzer, visualizer, report, predictor = setup()
 
     print("\n✅ Data loaded and processed successfully!\n")
 
@@ -75,6 +78,13 @@ def main():
             print("✅ Report generated successfully!")
 
         elif choice == '6':
+            print("===== Risk Level Prediction =====\n")
+            predictions = predictor.predict_risk(merged)
+            for item in predictions:
+                print(f"{item['Country']:<25} | Risk: {item['Risk Level']:<6} | "
+                    f"Cases/M: {item['Cases/Million']:<10} | Death Rate: {item['Death Rate (%)']}%")
+
+        elif choice == '7':
             print("\n👋 Thank you for using Pandemic Impact Analysis!")
             break
 

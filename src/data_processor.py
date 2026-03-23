@@ -20,7 +20,6 @@ class DataProcessor:
 
         merged['death_rate'] = (merged['total_deaths'] / merged['total_cases']) * 100
 
-        # Remove unwanted aggregated rows
         merged = merged[~merged['location'].isin(['World', 'Asia', 'Europe', 'Africa'])]
 
         return merged

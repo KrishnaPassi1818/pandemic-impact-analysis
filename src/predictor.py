@@ -17,4 +17,4 @@ class Predictor:
                 "Death Rate (%)": round(row['death_rate'], 2)
             })
 
-        return results[:10]  # show top 10 only
+        return results[:10]

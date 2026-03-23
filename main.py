@@ -32,7 +32,7 @@ def setup():
 
 
 def menu():
-    print("\n🌍 Pandemic Impact Analysis")
+    print("\nPandemic Impact Analysis")
     print("=" * 40)
     print("1. Top Countries by Total Cases")
     print("2. Top Countries by Cases per Million")
@@ -46,7 +46,7 @@ def menu():
 def main():
     merged, analyzer, visualizer, report, predictor = setup()
 
-    print("\n✅ Data loaded and processed successfully!\n")
+    print("\nData loaded and processed successfully!\n")
 
     while True:
         menu()
@@ -71,11 +71,11 @@ def main():
             visualizer.plot_bar(merged, 'total_cases', "Top Cases", "Cases", "top_cases.png")
             visualizer.plot_bar(merged, 'cases_per_million', "Cases per Million", "Cases", "cases_per_million.png")
             visualizer.plot_bar(merged, 'death_rate', "Death Rate", "Percentage", "death_rate.png")
-            print("✅ Graphs generated and saved!")
+            print("Graphs generated and saved!")
 
         elif choice == '5':
             report.generate(merged)
-            print("✅ Report generated successfully!")
+            print("Report generated successfully!")
 
         elif choice == '6':
             print("===== Risk Level Prediction =====\n")
@@ -85,11 +85,11 @@ def main():
                     f"Cases/M: {item['Cases/Million']:<10} | Death Rate: {item['Death Rate (%)']}%")
 
         elif choice == '7':
-            print("\n👋 Thank you for using Pandemic Impact Analysis!")
+            print("\nThank you for using Pandemic Impact Analysis!")
             break
 
         else:
-            print("❌ Invalid choice. Please enter a number between 1 and 6.")
+            print("Invalid choice. Please enter a number between 1 and 6.")
 
         input("\nPress Enter to continue...")
         clear()
